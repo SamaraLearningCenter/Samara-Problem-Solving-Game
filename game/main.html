@@ -27,8 +27,20 @@
         setTimeout("gameLoop()",10);
       }
   </script>
+    <style>
+      .GameDiv {
+        white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: none;
+      }
+      .GameChild {
+        display: inline-block;
+      }
+    </style>
   </head>
   <body onload="gameLoop();" onkeydown="" onkeyup="moveSelection(event)">
-    <img id="PlayerImage" src="NiceMonster.png" style="position: absolute; left: 15; right: 15; top: 15; bottom: auto; " height="25%" width="25%">
+    <div class="GameDiv">
+      <img id="PlayerImage" src="NiceMonster.png" height="25%" width="25%" class="GameChild">
+    </div>
   </body>
 </html>
