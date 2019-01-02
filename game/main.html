@@ -5,11 +5,11 @@
     <script type="text/javascript">
       function leftArrowPressed() {
         var element = document.getElementById("PlayerImages");
-        element.style.left = parseInt(element.style.left) - 5 + 'px';
+        element.style.left = parseInt(element.style.left) - 1 + '%';
       }
       function rightArrowPressed() {
         var element = document.getElementById("PlayerImage");
-        element.style.left = parseInt(element.style.left) + 5 + 'px';
+        element.style.left = parseInt(element.style.left) + 1 + '%';
       }
       function moveSelection(event) {                    
         switch (event.keyCode) {
@@ -40,7 +40,7 @@
   </head>
   <body onload="gameLoop();" onkeydown="" onkeyup="moveSelection(event)">
     <div class="GameDiv">
-      <img id="PlayerImage" src="NiceMonster.png" height="25%" width="25%" class="GameChild">
+      <img id="PlayerImage" src="NiceMonster.png" height="25%" width="25%" class="GameChild" style="left: 50%;">
     </div>
   </body>
 </html>
