@@ -50,10 +50,17 @@
       padding-left: 50%;
       margin: 0;
     }
-    .header {
-      color: white;
+    .header img {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: #555;
+    }
+    .header h1 {
+      position: relative;
+      top: 18px;
+      left: 10px;
       text-decoration: none;
-      text-size: 32px;
     }
   </style>
   <script>
@@ -63,7 +70,9 @@
   </script>
   </head>
   <body>
-    <img src="SamaraLogo.webp" width="25%" height="25%"><span style="header">Problem Solving Game</span>
+    <div class="header">
+      <img src="SamaraLogo.webp"></img><h1>Problem Solving Game</h1>
+    </div>
     <div class="playBtn"><img src="play_button.png" height="10%" width="10%" id="PlayButtonImage"></img></div>
   </body>
 </html>
