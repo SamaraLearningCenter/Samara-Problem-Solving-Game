@@ -1,46 +1,42 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <script type="text/javascript">
-      function leftArrowPressed() {
-        var element = document.getElementById("PlayerImages");
-        element.style.left = parseInt(element.style.left) - 1 + '%';
-      }
-      function rightArrowPressed() {
-        var element = document.getElementById("PlayerImage");
-        element.style.left = parseInt(element.style.left) + 1 + '%';
-      }
-      function moveSelection(event) {                    
-        switch (event.keyCode) {
-          case 37:
-            leftArrowPressed();
-            break;
-          case 39:
-            rightArrowPressed();
-            break;
-        }
-      };
-      function gameLoop() {
-        // change position based on speed
-        moveSelection();
-        setTimeout("gameLoop()",10);
-      }
-  </script>
-    <style>
-      .GameDiv {
-        white-space: nowrap;
-        overflow-x: auto;
-        overflow-y: none;
-      }
-      .GameChild {
-        display: inline-block;
-      }
-    </style>
-  </head>
-  <body onload="gameLoop();" onkeydown="moveSelection(event)" onkeyup="">
-    <div class="GameDiv">
-      <img id="PlayerImage" src="NiceMonster.png" height="25%" width="25%" class="GameChild" style="left: 50%;">
-    </div>
-  </body>
+	<head>
+		<script type="text/javascript">
+			//init object globally
+			var objImage= null;
+			function init(){
+				objImage=document.getElementById("PlayerImage");				
+				objImage.style.position='relative';
+				objImage.style.left='0px';
+				objImage.style.top='0px';
+			}
+			function getKeyAndMove(e){				
+				var key_code=e.which||e.keyCode;
+				switch(key_code){
+					case 37: //left arrow key
+						moveLeft();
+						break;
+          case 39: //right arrow key
+						moveRight();
+						break;
+				}
+			}
+			function moveLeft(){
+				objImage.style.left=parseInt(objImage.style.left)-5 +'px';
+			}
+			function moveUp(){
+				//objImage.style.top=parseInt(objImage.style.top)-5 +'px';
+			}
+			function moveRight(){
+				objImage.style.left=parseInt(objImage.style.left)+5 +'px';
+			}
+			function moveDown(){
+				//objImage.style.top=parseInt(objImage.style.top)+5 +'px';
+			}
+			window.onload=init;
+		</script>
+	</head>
+
+	<body onkeydown='getKeyAndMove(event)'>
+		<img id="PlayerImage" src="NiceMonster.png"/>
+	</body>
 </html>
