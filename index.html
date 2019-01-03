@@ -83,10 +83,11 @@
       background-color: #4CAF50;
       color: white;
     }
+    /* who knew this much css was needed for such a simple play screen */
   </style>
   <script>
     function play() {
-      //working on page first
+      location.replace("game/main.html");
     }
   </script>
   </head>
@@ -98,6 +99,6 @@
     <div class="header">
       <img src="SamaraLogo.webp"></img><h1>Problem Solving Game</h1>
     </div>
-    <div class="playBtn"><img src="play_button.png" height="10%" width="10%" id="PlayButtonImage"></img></div>
+    <div class="playBtn"><img src="play_button.png" height="10%" width="10%" id="PlayButtonImage" onclick="play()"></img></div>
   </body>
 </html>
