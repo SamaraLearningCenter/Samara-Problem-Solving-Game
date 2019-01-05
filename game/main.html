@@ -4,6 +4,7 @@
     <script type="text/javascript">
       //init object globally
       var objImage= null;
+      var PlayerImagePaddingLeft = 0;
       function init(){
         objImage=document.getElementById("PlayerImage");	
         /*
@@ -25,9 +26,14 @@
       }
       function moveLeft(){
         objImage.style.paddingLeft=parseInt(objImage.style.paddingLeft) - 1 +'%';
+        PlayerImagePaddingLeft = parseInt(objImage.style.paddingLeft);
       }
       function moveRight(){
+        PlayerImagePaddingLeft = parseInt(objImage.style.paddingLeft);
+        if(PlayerImagePaddingLeft < 55) {
           objImage.style.paddingLeft=parseInt(objImage.style.paddingLeft) + 1 +'%';
+        }
+        PlayerImagePaddingLeft = parseInt(objImage.style.paddingLeft); //Yes, there needs to be one of these at the top and bottom.
       }
       window.onload=init;
     </script>
