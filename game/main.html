@@ -7,10 +7,7 @@
       function init(){
         objImage=document.getElementById("PlayerImage");				
         objImage.style.position='relative';
-        /*
-        removed because we need the left property
         objImage.style.left='0px';
-        */
         objImage.style.top='0px';
       }
       function getKeyAndMove(e){				
@@ -56,10 +53,7 @@
     </style>
   </head>
   <body onkeydown='getKeyAndMove(event)'>
-    <div class="container">
-      <img id="SadBall" src="SadBall.jpg" class="bottomleft"/>
-      <img id="PlayerImage" src="NiceMonster.png" class="center"/>
-      <img id="SadBlob" src="SadBlob.jpg" class="bottomright"/>
-    </div>
+    <img id="SadBall" src="SadBall.jpg"/>
+    <center><img id="PlayerImage" src="NiceMonster.png"/></center>
   </body>
 </html>
