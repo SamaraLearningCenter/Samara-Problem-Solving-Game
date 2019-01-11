@@ -2,13 +2,15 @@
 <html>
   <head>
     <script type="text/javascript">
-      var player = document.getElementById("PlayerImage");
-      var bounding = player.getBoundingClientRect();
+      var player;
+      var bounding;
       //init object globally
-      var objImage = document.getElementById("PlayerImage");
+      var objImage;
       var PlayerImagePaddingLeft = 0;
       function init(){
         objImage=document.getElementById("PlayerImage");	
+        player = document.getElementById("PlayerImage");
+        bounding = player.getBoundingClientRect();
         /*
         objImage.style.position='relative';
         */
