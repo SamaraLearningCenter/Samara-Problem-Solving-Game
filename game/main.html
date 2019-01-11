@@ -2,6 +2,8 @@
 <html>
   <head>
     <script type="text/javascript">
+      var player = document.getElementById("PlayerImage");
+      var bounding = player.getBoundingClientRect();
       //init object globally
       var objImage= null;
       var PlayerImagePaddingLeft = 0;
@@ -33,6 +35,20 @@
         if(PlayerImagePaddingLeft < 52) {
           objImage.style.paddingLeft=parseInt(objImage.style.paddingLeft) + 1 +'%';
         }
+        
+        //this is some code that tells if the player is in the view port. it was just copy and pasted and has something to do with math and idk how it works.
+        if (
+          bounding.top >= 0 &&
+          bounding.left >= 0 &&
+          bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+          bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        ) {
+          //the player is in the view port, don't to anything
+        } else {
+          //not in viewport, fix him
+          objImage.style.paddingLeft ='0%';
+        }
+        
         PlayerImagePaddingLeft = parseInt(objImage.style.paddingLeft); //Yes, there needs to be one of these at the top and bottom.
       }
       window.onload=init;
